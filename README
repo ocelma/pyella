@@ -1,0 +1,34 @@
+-----------
+BMAT - ELLA
+-----------
+
+API Documentation:
+  https://musichackday:mhdbcn2010_@secure.bmat.com/ella-doc/musichackday/_search.html
+
+Examples:
+
+import pyella
+
+# 1) search one by u2
+results = pyella.search_tracks('u2 one')
+for track in results.get_next_page():
+    print track.get_mbid(), track.get_title(), track_get_artist_name()
+
+
+# 2) search for blues, slow sad songs
+COLLECTION = 'bmat'
+filter = []
+filter.append('mood:blue')
+filter.append('speed:slow')
+filter.append('track_genre:Blues')
+searcher = pyella.search_tracks(None, COLLECTION, filter=filter)
+print searcher.get_total_result_count()
+
+for track in searcher.get_page(0):
+    print track.get_mbid(), track
+
+# 3) get similar tracks by u2 one
+track = pyella.search_tracks('u2 one').get_page(0)[0]
+print track, track.get_similar()
+
+
