@@ -2,17 +2,29 @@
 BMAT - ELLA
 -----------
 
-API Documentation:
+== Intro ==
+
+ELLA API is based on REST (REpresentational State Transfer), where users, artists, tracks, tags, concerts, venues, etc. are abstracted into resources. Each resource is identified using a unique URI (Uniform Resource Identifiers), and they all share a uniform interface to define and modify its state, using HTTP GET, POST and PUT.
+
+== Authentication ==
+
+Authentication is via user/passwd HTTP params: http://user:passwd@server
+
+  Example:
+    http://musichackday:mhdbcn2010_@ella.bmat.ws/collections/bmat/tracks/search?q=white+stripes+my+fault+being+famous
+
+== API Documentation ==
+
   https://musichackday:mhdbcn2010_@secure.bmat.com/ella-doc/musichackday/_search.html
 
-Examples:
+== EXAMPLES ==
 
 import pyella
 
 # 1) search one by u2
 results = pyella.search_tracks('u2 one')
 for track in results.get_next_page():
-    print track.get_mbid(), track.get_title(), track_get_artist_name()
+    print track.get_mbid(), track.get_title(), track.get_artist_name()
 
 
 # 2) search for blues, slow sad songs
