@@ -15,7 +15,7 @@ Authentication is via user/passwd HTTP params: http://user:passwd@server
 
 == API Documentation ==
 
-  https://musichackday:mhdbcn2010_@secure.bmat.com/ella-doc/musichackday/_search.html
+  https://musichackday:mhdbcn2010_@secure.bmat.com/ella-doc/musichackday/
 
 == EXAMPLES ==
 
